@@ -1,0 +1,46 @@
+.Header {
+  display: flex;
+  justify-content: space-evenly;
+  background: lightgoldenrodyellow;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.Header div:nth-child(3){
+  margin-left: 50px;
+  margin-right: 50px;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.logo {
+  width: 100px;
+  height: 100px;
+  animation: spin 5s linear 0s infinite;
+}
+
+.mini-game img {
+  width: 100px;
+  height: 100px;
+}
+.logo-center img {
+  height: 100px;
+}
+.search input {
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+}
+.search input:focus {
+  outline: none;
+}
+@media (max-width: 600px) {
+  .mini-game img {
+    display: none;
+  }
+}
