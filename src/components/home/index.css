@@ -1,0 +1,47 @@
+.Pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.Pokemon div {
+    width: 100px;
+}
+.pokemon-block .css-5lyxn4 {
+    margin: 120px auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.pokemon-block {
+    flex: 1;
+}
+.pokemon-block ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 460px) {
+    .pokemon-block ul {
+        justify-content: center;
+
+        margin-right: 0;
+    }
+    .pokemon-block .ant-pagination-prev {
+        margin-right: 0;
+    }
+    .pokemon-block ul li {
+        min-width: 0;
+    }
+    .pokemon-block .ant-pagination-item {
+        margin-right: 0;
+    }
+    .pokemon-block .ant-pagination {
+        margin-right: 0;
+    }
+}
