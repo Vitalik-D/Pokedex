@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import { connect } from "react-redux";
 import * as actions from "../../components/store/actions";
+import ClipLoader from "react-spinners/ClipLoader";
 
 class Home extends React.Component<any> {
   state = {
@@ -22,7 +23,8 @@ class Home extends React.Component<any> {
   }
 
   imgId = (link: any) => {
-    const img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+    const img =
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
     let id = link.replace("https://pokeapi.co/api/v2/pokemon/", "");
     id = id.replace("/", "");
     return img + id;
@@ -50,12 +52,16 @@ class Home extends React.Component<any> {
 
   render() {
     let { isLoaded, pokemons, countPok, searchString } = this.state;
-
     return (
-      <div className="pokemon-block">
+      <>
         {isLoaded ? (
-          <>
-            <input onChange={this.handleSearch} value={searchString} />
+          <div className="pokemon-block">
+            <input
+              placeholder="Enter pokemon name..."
+              onChange={this.handleSearch}
+              value={searchString}
+              className="search"
+            />
             <div className="Pokemon">
               {pokemons.map((pok: any) => (
                 <div key={countPok++}>
@@ -64,15 +70,16 @@ class Home extends React.Component<any> {
                 </div>
               ))}
             </div>
-          </>
+          </div>
         ) : (
-          <p>dwfgh</p>
+          <div className="Loader">
+            <ClipLoader sizeUnit={"px"} size={150} color={"red"} />
+          </div>
         )}
-      </div>
+      </>
     );
   }
 }
-
 const mapStateToProps = (state: any) => {
   return {
     COUNTER: state.COUNTER

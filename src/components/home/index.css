@@ -15,8 +15,19 @@
     text-align: center;
     align-items: center;
 }
+.Loader{
+    height: calc(100% - 104.36px - 50.91px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .pokemon-block {
-    flex: 1;
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 .pokemon-block ul {
     display: flex;
@@ -25,7 +36,15 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+.search{
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid red;
+    box-shadow: none;
+    color: black;
+}
 @media (max-width: 460px) {
     .pokemon-block ul {
         justify-content: center;

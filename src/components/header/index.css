@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-evenly;
   background: lightgoldenrodyellow;
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 .Header div:nth-child(3){
   margin-left: 50px;
