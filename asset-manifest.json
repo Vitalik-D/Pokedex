@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Pokedex/static/css/main.34b166a5.chunk.css",
+    "main.js": "/Pokedex/static/js/main.5a2ad3de.chunk.js",
+    "main.js.map": "/Pokedex/static/js/main.5a2ad3de.chunk.js.map",
+    "runtime-main.js": "/Pokedex/static/js/runtime-main.ba04c60a.js",
+    "runtime-main.js.map": "/Pokedex/static/js/runtime-main.ba04c60a.js.map",
+    "static/js/2.f0c84659.chunk.js": "/Pokedex/static/js/2.f0c84659.chunk.js",
+    "static/js/2.f0c84659.chunk.js.map": "/Pokedex/static/js/2.f0c84659.chunk.js.map",
+    "index.html": "/Pokedex/index.html",
+    "precache-manifest.5124538196c1823fb78ef7d3b0f4fb1a.js": "/Pokedex/precache-manifest.5124538196c1823fb78ef7d3b0f4fb1a.js",
+    "service-worker.js": "/Pokedex/service-worker.js",
+    "static/css/main.34b166a5.chunk.css.map": "/Pokedex/static/css/main.34b166a5.chunk.css.map",
+    "static/media/pngfind.com-ash-greninja-png-2124784.png": "/Pokedex/static/media/pngfind.com-ash-greninja-png-2124784.3d751cc6.png",
+    "static/media/pokeball-icon-transparent-9.jpg": "/Pokedex/static/media/pokeball-icon-transparent-9.9586f4ea.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba04c60a.js",
+    "static/js/2.f0c84659.chunk.js",
+    "static/css/main.34b166a5.chunk.css",
+    "static/js/main.5a2ad3de.chunk.js"
+  ]
+}
