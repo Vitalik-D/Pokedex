@@ -1,8 +1,6 @@
 import React from "react";
 import "./index.css";
-// @ts-ignore
 import logo from '../img/pokeball-icon-transparent-9.jpg';
-// @ts-ignore
 import pokemon from "../img/pngfind.com-ash-greninja-png-2124784.png";
 
 const Header: React.SFC = () => {

@@ -22,70 +22,66 @@ class Home extends React.Component<any> {
     });
   }
 
-  imgId = (link: any) => {
+  imgId = (link: string) => {
     const img =
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-    let id = link.replace("https://pokeapi.co/api/v2/pokemon/", "");
-    id = id.replace("/", "");
+    let id = link
+        .replace("https://pokeapi.co/api/v2/pokemon/", "")
+        .replace("/", "");
     return img + id;
   };
 
-  handleSearch = (event: any) => {
+  handleSearch = (event: object|any) => {
     const value = event.currentTarget.value.toLowerCase().trim();
-    const { data } = this.state;
-    function getMatch(arr: any, str: any) {
-      const reg = new RegExp(str.split("").join(".*"), "i");
-
-      return arr.filter(function(item: any) {
-        if (item.name.match(reg)) {
-          return item;
-        }
-      });
-    }
-    const filter = getMatch(data, value);
-
+    let { data } = this.state;
+    const reg = new RegExp(value.split("").join(".*"), "i");
+    const filterArr = data.filter((item: object|any) => {
+      if (item.name.match(reg)) {
+        return item;
+      }
+    });
     this.setState({
       searchString: value,
-      pokemons: filter
+      pokemons: filterArr
     });
   };
 
   render() {
-    let { isLoaded, pokemons, countPok, searchString } = this.state;
+    const { isLoaded, pokemons, searchString } = this.state;
+    let { countPok } = this.state;
+
     return (
-      <>
+      <div className="pokemon-block">
+        <input
+          placeholder="Enter pokemon name..."
+          onChange={this.handleSearch}
+          value={searchString}
+          className="search"
+        />
         {isLoaded ? (
-          <div className="pokemon-block">
-            <input
-              placeholder="Enter pokemon name..."
-              onChange={this.handleSearch}
-              value={searchString}
-              className="search"
-            />
-            <div className="Pokemon">
-              {pokemons.map((pok: any) => (
-                <div key={countPok++}>
-                  <img src={this.imgId(pok.url) + ".png"} alt="pokemon" />
-                  <p>{pok.name}</p>
-                </div>
-              ))}
-            </div>
+          <div className="Pokemon">
+            {pokemons.map((pok: object|any) => (
+              <div key={countPok++}>
+                <img src={this.imgId(pok.url) + ".png"} alt="pokemon" />
+                <p>{pok.name}</p>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="Loader">
             <ClipLoader sizeUnit={"px"} size={150} color={"red"} />
           </div>
         )}
-      </>
+      </div>
     );
   }
 }
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: any|object) => {
   return {
     COUNTER: state.COUNTER
   };
 };
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any|object) => {
   return {
     initCounter: async () => dispatch(await actions.initCounter())
   };
